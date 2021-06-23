@@ -13,7 +13,7 @@ RUN cd /build &&\
     makepkg &&\
     mv yay-*.pkg.tar.* yay.pkg.tar
 
-FROM agners/archlinuxarm
+FROM agners/archlinuxarm-arm64v8
 
 RUN useradd -m yay &&\
     echo "yay ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
