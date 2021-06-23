@@ -1,7 +1,7 @@
 FROM agners/archlinuxarm-arm64v8 as build
 
 RUN pacman -Suy --noconfirm &&\
-    pacman -S --noconfirm git sudo go base-devel &&\
+    pacman -S --noconfirm git sudo go base-devel shadow &&\
     useradd -m yay &&\
     mkdir /build &&\
     chown yay:yay -R /build
