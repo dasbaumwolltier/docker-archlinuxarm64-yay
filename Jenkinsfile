@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'arm' }
 
-    environment {
+    environment {
         CREDENTIAL_ID = 'docker-hub-upload'
     }
 
