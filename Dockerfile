@@ -1,4 +1,4 @@
-FROM agners/archlinuxarm-arm64v8 as build
+FROM agners/archlinuxarm as build
 
 RUN pacman -Suy --noconfirm &&\
     pacman -S --noconfirm git sudo go base-devel shadow
@@ -14,7 +14,7 @@ RUN cd /build &&\
     makepkg &&\
     mv yay-*.pkg.tar.* yay.pkg.tar
 
-FROM agners/archlinuxarm-arm64v8
+FROM agners/archlinuxarm
 
 COPY --from=build /build/yay/yay.pkg.tar /
 

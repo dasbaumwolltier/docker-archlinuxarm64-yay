@@ -2,12 +2,12 @@
 
 set -x
 
-IMAGE_NAME="archlinuxarm64-yay"
+IMAGE_NAME="archlinux-yay"
 VERSION="latest"
 
 TEMPFILE="$(mktemp)"
 
-docker pull agners/archlinuxarm-arm64v8
+docker pull agners/archlinuxarm
 docker build . > $TEMPFILE
 
 IMAGE_ID="$(cat "$TEMPFILE" | tail -1 | cut -d' ' -f3 | tr ' ' '\n')"
