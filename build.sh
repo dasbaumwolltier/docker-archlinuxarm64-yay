@@ -7,7 +7,7 @@ VERSION="aarch64"
 
 TEMPFILE="$(mktemp)"
 
-docker pull agners/archlinuxarm
+docker pull dasbaumwolltier/archlinuxarm:aarch64
 docker build . > $TEMPFILE
 
 IMAGE_ID="$(cat "$TEMPFILE" | tail -1 | cut -d' ' -f3 | tr ' ' '\n')"
