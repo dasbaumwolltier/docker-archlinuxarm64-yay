@@ -16,14 +16,14 @@ RUN cd /build &&\
 
 FROM agners/archlinuxarm-arm64v8
 
+COPY --from=build /build/yay/yay.pkg.tar /
+
 RUN pacman -Suy --noconfirm &&\
     pacman -S --noconfirm git sudo base-devel shadow &&\
     pacman -U --noconfirm /yay.pkg.tar
 
 RUN useradd -m yay &&\
     echo "yay ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-
-COPY --from=build /build/yay/yay.pkg.tar /
 
 USER yay
 
