@@ -2,8 +2,8 @@
 
 set -x
 
-IMAGE_NAME="archlinuxarm64-yay"
-VERSION="latest"
+IMAGE_NAME="archlinuxarm-yay"
+VERSION="aarch64"
 
 TEMPFILE="$(mktemp)"
 
