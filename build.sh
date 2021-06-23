@@ -8,7 +8,7 @@ VERSION="latest"
 TEMPFILE="$(mktemp)"
 
 docker pull agners/archlinuxarm
-docker build . > $TEMPFILE
+docker buildx --platform linux/arm64 . > $TEMPFILE
 
 IMAGE_ID="$(cat "$TEMPFILE" | tail -1 | cut -d' ' -f3 | tr ' ' '\n')"
 
