@@ -1,0 +1,5 @@
+kind: template
+load: dockerhub.yaml
+data:
+  org: dasbaumwolltier
+  image: archlinuxarm-yay
